@@ -1,0 +1,40 @@
+<script>
+//存
+let a=[];
+let associative={id:"D3838",name:"Yeah"};
+let y={"id":"D3838","name":"Yeah"};
+//若标签中间有空格，双引号不可少，值的中间不可有空格
+let z={id:"D3838","Last name":"Yeah"};
+let w={"Paxton":333888,"Lin":888333};
+//增
+w["ACE"]=18838;
+//取
+document.write(w["ACE"]+"<br>");
+//遍
+for(let key in w)
+	document.write("key="+key+" value="+w[key]+"<br>");
+//for(let v of w)
+//	document.write("value="+w[key]+"<br>")；
+//字典不能在值中遍历，数组可以在值中遍历
+//查
+for(let key in w)
+	if(w[key]==333888)
+		document.write(key+" has 333888<br>");
+//数
+document.write("size of w ="+w.length+"<br>");
+//调用：需要在函数名前加namespace（家族名称）
+var x=0;
+var Game={
+x:1,
+y:2,
+move:function(u,v){document.write(Game.x+","+Game.y+"<br>")}//若“x”前没有加namespace则调取的x值为函数体外的数值0
+}
+Game.move(1,2);
+//改
+Game.move=function(u,v){ }
+//setTimeout函数
+//setTimeout(functionname,2000);//第二个参数需要一个时间数值单位为毫秒，此处的数值代表2秒以后执行指定函数
+//setTimeout(function(){...},i*1500);//只需要用一次不用定义函数名称
+//setTimeout("Grame.move("+x+","+y+")",i*1000);
+//clearTimeout(h);
+</script>
